@@ -20,8 +20,8 @@ class HazardDetectionSystem:
 
     # Available models (verified to exist)
     AVAILABLE_MODELS = {
-        'gemma-2b': 'google/gemma-2-2b-it',  # 2B params, ~5GB
-        'gemma-9b': 'google/gemma-2-9b-it',  # 9B params, ~18GB
+        'gemma-2b': 'google/gemma-3n-e2b-it',  # 2B params, ~5GB
+        'gemma-4b': 'google/gemma-3n-e4b-it',  # 9B params, ~18GB
         'paligemma-3b': 'google/paligemma-3b-mix-224',  # Vision model, ~6GB
     }
 
