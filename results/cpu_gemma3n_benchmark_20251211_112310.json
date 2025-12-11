@@ -1,0 +1,220 @@
+{
+  "model": "Gemma 3N",
+  "summary": {
+    "avg_time_ms": 5632.119000000001,
+    "avg_inference_ms": 5626.4400000000005,
+    "avg_fps": 0.18,
+    "avg_prefill_speed": 47.296,
+    "avg_decode_speed": 4.563999999999999,
+    "min_time_ms": 5362.77,
+    "max_time_ms": 5800.44,
+    "std_dev_ms": 108.51305160670742,
+    "median_time_ms": 5651.465,
+    "realtime_30fps_capable": false,
+    "realtime_15fps_capable": false,
+    "speedup_vs_mobile": 0.035510613323333544,
+    "device": "cpu"
+  },
+  "results": [
+    {
+      "hazard_level": "yellow",
+      "reminder": "Caution: Wet surfaces, concrete debris",
+      "metrics": {
+        "total_time_ms": 5362.77,
+        "preprocessing_ms": 5.64,
+        "inference_ms": 5352.13,
+        "parsing_ms": 0.01,
+        "input_tokens": 266,
+        "output_tokens": 21,
+        "prefill_speed": 49.7,
+        "decode_speed": 3.92,
+        "fps": 0.19,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "{\"hazard_level\": \"yellow\", \"reminder\": \"Caution: Wet surfaces, concrete debris\"}",
+      "frame_number": 0
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Ensure proper footing, avoid slippery surfaces.",
+      "metrics": {
+        "total_time_ms": 5552.93,
+        "preprocessing_ms": 4.44,
+        "inference_ms": 5548.07,
+        "parsing_ms": 0.01,
+        "input_tokens": 266,
+        "output_tokens": 22,
+        "prefill_speed": 47.94,
+        "decode_speed": 3.97,
+        "fps": 0.18,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "{\"hazard_level\": \"yellow\", \"reminder\": \"Ensure proper footing, avoid slippery surfaces.\"}",
+      "frame_number": 1
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Concrete spill risk. Stay clear.",
+      "metrics": {
+        "total_time_ms": 5638.04,
+        "preprocessing_ms": 5.44,
+        "inference_ms": 5632.03,
+        "parsing_ms": 0.01,
+        "input_tokens": 266,
+        "output_tokens": 26,
+        "prefill_speed": 47.23,
+        "decode_speed": 4.62,
+        "fps": 0.18,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Concrete spill risk. Stay clear.\"}\n```",
+      "frame_number": 2
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Watch for falling debris, concrete is wet.",
+      "metrics": {
+        "total_time_ms": 5800.44,
+        "preprocessing_ms": 4.49,
+        "inference_ms": 5795.31,
+        "parsing_ms": 0.02,
+        "input_tokens": 266,
+        "output_tokens": 28,
+        "prefill_speed": 45.9,
+        "decode_speed": 4.83,
+        "fps": 0.17,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Watch for falling debris, concrete is wet.\"}\n```",
+      "frame_number": 3
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Ensure proper footing, avoid slippery surfaces",
+      "metrics": {
+        "total_time_ms": 5611.31,
+        "preprocessing_ms": 4.48,
+        "inference_ms": 5606.28,
+        "parsing_ms": 0.01,
+        "input_tokens": 266,
+        "output_tokens": 26,
+        "prefill_speed": 47.45,
+        "decode_speed": 4.64,
+        "fps": 0.18,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Ensure proper footing, avoid slippery surfaces\"}\n```",
+      "frame_number": 4
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Ensure proper footing, avoid slippery surfaces.",
+      "metrics": {
+        "total_time_ms": 5680.48,
+        "preprocessing_ms": 4.89,
+        "inference_ms": 5674.89,
+        "parsing_ms": 0.01,
+        "input_tokens": 266,
+        "output_tokens": 27,
+        "prefill_speed": 46.87,
+        "decode_speed": 4.76,
+        "fps": 0.18,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Ensure proper footing, avoid slippery surfaces.\"}\n```",
+      "frame_number": 5
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Wear proper PPE. Concrete is wet.",
+      "metrics": {
+        "total_time_ms": 5705.49,
+        "preprocessing_ms": 3.99,
+        "inference_ms": 5700.77,
+        "parsing_ms": 0.01,
+        "input_tokens": 266,
+        "output_tokens": 27,
+        "prefill_speed": 46.66,
+        "decode_speed": 4.74,
+        "fps": 0.18,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Wear proper PPE. Concrete is wet.\"}\n```",
+      "frame_number": 6
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Ensure proper footing, avoid slippery surfaces.",
+      "metrics": {
+        "total_time_ms": 5668.4,
+        "preprocessing_ms": 4.15,
+        "inference_ms": 5663.64,
+        "parsing_ms": 0.02,
+        "input_tokens": 266,
+        "output_tokens": 27,
+        "prefill_speed": 46.97,
+        "decode_speed": 4.77,
+        "fps": 0.18,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Ensure proper footing, avoid slippery surfaces.\"}\n```",
+      "frame_number": 7
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Watch for falling debris, concrete is wet",
+      "metrics": {
+        "total_time_ms": 5664.89,
+        "preprocessing_ms": 4.38,
+        "inference_ms": 5659.94,
+        "parsing_ms": 0.01,
+        "input_tokens": 266,
+        "output_tokens": 27,
+        "prefill_speed": 47.0,
+        "decode_speed": 4.77,
+        "fps": 0.18,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Watch for falling debris, concrete is wet\"}\n```",
+      "frame_number": 8
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Concrete spill risk. Avoid contact.",
+      "metrics": {
+        "total_time_ms": 5636.44,
+        "preprocessing_ms": 4.52,
+        "inference_ms": 5631.34,
+        "parsing_ms": 0.01,
+        "input_tokens": 266,
+        "output_tokens": 26,
+        "prefill_speed": 47.24,
+        "decode_speed": 4.62,
+        "fps": 0.18,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Concrete spill risk. Avoid contact.\"}\n```",
+      "frame_number": 9
+    }
+  ]
+}

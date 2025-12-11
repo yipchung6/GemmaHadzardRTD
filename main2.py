@@ -14,13 +14,13 @@ warnings.filterwarnings('ignore')
 
 class HazardDetectionSystem:
     """
-    Hazard Detection using Gemma 3N (Correct Implementation)
-    Uses Gemma3nForConditionalGeneration with chat format
+    Hazard Detection using Gemma 3N (Native Multimodal)
+    Generates safety reminders instead of reasons
     """
 
     AVAILABLE_MODELS = {
-        'gemma-2b': 'google/gemma-3n-e2b-it',
-        'gemma-4b': 'google/gemma-3n-e4b-it',
+        'gemma-3n-2b': 'google/gemma-3n-e2b-it',
+        'gemma-3n-4b': 'google/gemma-3n-e4b-it',
     }
 
     def __init__(self, model_name="gemma-2b", device="cuda"):
@@ -80,8 +80,8 @@ class HazardDetectionSystem:
             print("   3. Try: pip install git+https://github.com/huggingface/transformers.git")
             raise
 
-        # Hazard analysis prompt
-        self.HAZARD_SYSTEM_PROMPT = """You are a safety hazard detection expert. Analyze images and identify potential dangers."""
+        # Updated prompts for safety reminders
+        self.HAZARD_SYSTEM_PROMPT = """You are a safety hazard detection expert. Analyze images and provide actionable safety reminders."""
 
         self.HAZARD_USER_PROMPT = """Analyze this image for safety hazards.
 
@@ -96,8 +96,16 @@ Consider:
 - People at risk (improper safety gear, unsafe behavior)
 - Environmental hazards (smoke, darkness, extreme weather)
 
+If green: leave reminder EMPTY ("")
+If yellow or red: provide a brief, actionable SAFETY REMINDER (under 60 characters)
+
+Examples:
+- Green: {"hazard_level": "green", "reminder": ""}
+- Yellow: {"hazard_level": "yellow", "reminder": "Watch for wet floor, walk carefully"}
+- Red: {"hazard_level": "red", "reminder": "Evacuate immediately, fire detected"}
+
 Respond ONLY with valid JSON (no markdown, no extra text):
-{"hazard_level": "[green/yellow/red]", "reason": "[brief explanation under 50 words]"}"""
+{"hazard_level": "[green/yellow/red]", "reminder": "[safety tip or empty string]"}"""
 
     def process_frame(self, image):
         """Process a single frame and detect hazards"""
@@ -151,7 +159,7 @@ Respond ONLY with valid JSON (no markdown, no extra text):
             with torch.no_grad():
                 outputs = self.model.generate(
                     **inputs,
-                    max_new_tokens=500,
+                    max_new_tokens=150,  # Shorter for faster reminders
                     do_sample=True,
                     temperature=0.7,
                     top_p=0.9,
@@ -174,7 +182,6 @@ Respond ONLY with valid JSON (no markdown, no extra text):
         timing['inference_ms'] = inference_ms
 
         # Prefill/decode speed
-        # (HuggingFace does not split the timing; use whole inference_time for both, like mobile)
         inference_time_s = (inference_end - inference_start)
         prefill_speed = input_tokens / inference_time_s if inference_time_s > 0 else 0
         decode_speed = output_token_count / inference_time_s if inference_time_s > 0 else 0
@@ -213,7 +220,7 @@ Respond ONLY with valid JSON (no markdown, no extra text):
         return hazard_result
 
     def _generate_fallback_response(self, image):
-        """Generate fallback response"""
+        """Generate fallback response with reminder"""
         if not isinstance(image, np.ndarray):
             image = np.array(image)
 
@@ -222,12 +229,12 @@ Respond ONLY with valid JSON (no markdown, no extra text):
         if brightness < 50:
             return json.dumps({
                 "hazard_level": "yellow",
-                "reason": "Low visibility detected. Poor lighting may indicate hazards."
+                "reminder": "Use caution in low visibility areas"
             })
         else:
             return json.dumps({
                 "hazard_level": "green",
-                "reason": "Well-lit environment. No obvious hazards detected."
+                "reminder": ""
             })
 
     def _parse_response(self, text):
@@ -242,10 +249,40 @@ Respond ONLY with valid JSON (no markdown, no extra text):
 
             if start != -1 and end > start:
                 json_str = text[start:end]
+
+                # Handle multiple JSON objects (take first)
+                if json_str.count('{') > 1:
+                    brace_count = 0
+                    for i, char in enumerate(json_str):
+                        if char == '{':
+                            brace_count += 1
+                        elif char == '}':
+                            brace_count -= 1
+                            if brace_count == 0:
+                                json_str = json_str[:i + 1]
+                                break
+
                 result = json.loads(json_str)
+
+                # Validate hazard_level
+                hazard_level = result.get('hazard_level', 'green').lower()
+                if hazard_level not in ['green', 'yellow', 'red']:
+                    hazard_level = 'green'
+
+                # Get reminder (check both 'reminder' and 'reason' for compatibility)
+                reminder = result.get('reminder', result.get('reason', '')).strip()
+
+                # Enforce empty reminder for green
+                if hazard_level == 'green':
+                    reminder = ''
+
+                # Truncate long reminders
+                if len(reminder) > 100:
+                    reminder = reminder[:97] + "..."
+
                 return {
-                    'hazard_level': result.get('hazard_level', 'green').lower(),
-                    'reason': result.get('reason', 'Analysis complete')
+                    'hazard_level': hazard_level,
+                    'reminder': reminder
                 }
             else:
                 return self._fallback_parse(text)
@@ -259,22 +296,47 @@ Respond ONLY with valid JSON (no markdown, no extra text):
         text_lower = text.lower()
 
         # Look for hazard keywords
-        if any(word in text_lower for word in ['red', 'danger', 'threat', 'unsafe', 'critical', 'emergency']):
+        if any(word in text_lower for word in
+               ['red', 'danger', 'threat', 'unsafe', 'critical', 'emergency', 'fire', 'weapon']):
             level = 'red'
-        elif any(word in text_lower for word in ['yellow', 'caution', 'warning', 'careful', 'potential']):
+            reminder = self._extract_reminder(text, 'red')
+        elif any(word in text_lower for word in ['yellow', 'caution', 'warning', 'careful', 'potential', 'risk']):
             level = 'yellow'
+            reminder = self._extract_reminder(text, 'yellow')
         else:
             level = 'green'
+            reminder = ''
 
         return {
             'hazard_level': level,
-            'reason': text[:150] if text else "Unable to parse response"
+            'reminder': reminder
         }
+
+    def _extract_reminder(self, text, level):
+        """Extract or generate safety reminder from text"""
+        # Default reminders by level
+        defaults = {
+            'red': 'Evacuate area immediately',
+            'yellow': 'Exercise caution in this area'
+        }
+
+        # Try to extract meaningful text
+        if len(text) > 10 and len(text) < 150:
+            reminder = text.strip()
+            # Clean up
+            for phrase in ['Respond', 'JSON', 'hazard_level', 'reminder', '{', '}', '"', 'markdown']:
+                reminder = reminder.replace(phrase, '')
+            reminder = reminder.strip(':,. ')
+
+            if len(reminder) > 5 and len(reminder) < 100:
+                return reminder
+
+        return defaults.get(level, 'Be aware of surroundings')
 
     def benchmark_realtime_performance(self, video_path, num_frames=30):
         """Benchmark with consecutive frames"""
         print(f"🎯 REAL-TIME PERFORMANCE BENCHMARK")
-        print(f"   Model: Gemma 3N (Native Multimodal)")
+        print(f"   Model: Gemma 3N (Native Multimodal with Safety Reminders)")
         print(f"   Testing with {num_frames} consecutive frames")
         print(f"   Device: {self.device.upper()}\n")
 
@@ -295,7 +357,10 @@ Respond ONLY with valid JSON (no markdown, no extra text):
         frame_count = 0
 
         print("🚀 Processing frames...")
-        print("=" * 110)
+        print("=" * 150)
+        print(
+            f"{'Frame':<7} | {'Total(ms)':<10} | {'Inference(ms)':<14} | {'Prefill(t/s)':<13} | {'Decode(t/s)':<13} | {'In':<4} | {'Out':<4} | {'Level':<7} | {'AI Safety Reminder':<50}")
+        print("=" * 150)
 
         while frame_count < num_frames:
             ret, frame = cap.read()
@@ -308,18 +373,24 @@ Respond ONLY with valid JSON (no markdown, no extra text):
             results.append(result)
 
             metrics = result['metrics']
-            indicator = "✅" if metrics['realtime_capable_30fps'] else "⚠️" if metrics['realtime_capable_15fps'] else "❌"
+
+            # Show reminder or "[safe]" indicator
+            reminder_display = result['reminder'] if result['reminder'] else "[safe - no reminder needed]"
 
             print(
-                f"Frame {frame_count:3d} | {metrics['total_time_ms']:7.2f} ms | {metrics['fps']:5.2f} FPS | {indicator} | {result['hazard_level']:6s} | {result['reason'][:50]}")
+                f"{frame_count:<7} | {metrics['total_time_ms']:<10.2f} | {metrics['inference_ms']:<14.2f} | "
+                f"{metrics['prefill_speed']:<13.2f} | {metrics['decode_speed']:<13.2f} | "
+                f"{metrics['input_tokens']:<4} | {metrics['output_tokens']:<4} | "
+                f"{result['hazard_level']:<7} | {reminder_display[:50]:<50}"
+            )
 
             frame_count += 1
 
         cap.release()
 
-        print("\n" + "=" * 110)
+        print("\n" + "=" * 150)
         print("📊 REAL-TIME PERFORMANCE ANALYSIS")
-        print("=" * 110)
+        print("=" * 150)
         self._display_realtime_analysis(results)
 
         return results
@@ -334,7 +405,7 @@ Respond ONLY with valid JSON (no markdown, no extra text):
         inference_times = [r['metrics']['inference_ms'] for r in results]
         fps_values = [r['metrics']['fps'] for r in results]
         prefill_speeds = [r['metrics']['prefill_speed'] for r in results]
-        decode_speed = [r['metrics']['decode_speed'] for r in results]
+        decode_speeds = [r['metrics']['decode_speed'] for r in results]
 
         avg_time = np.mean(times)
         avg_inference = np.mean(inference_times)
@@ -344,7 +415,7 @@ Respond ONLY with valid JSON (no markdown, no extra text):
         std_time = np.std(times)
         avg_fps = np.mean(fps_values)
         avg_prefill_speed = np.mean(prefill_speeds)
-        avg_decode_speed = np.mean(decode_speed)
+        avg_decode_speed = np.mean(decode_speeds)
 
         capable_30fps = sum(1 for r in results if r['metrics']['realtime_capable_30fps'])
         capable_15fps = sum(1 for r in results if r['metrics']['realtime_capable_15fps'])
@@ -357,8 +428,9 @@ Respond ONLY with valid JSON (no markdown, no extra text):
         print(f"   Max:        {max_time:7.2f} ms  (worst case)")
         print(f"   Std Dev:    {std_time:7.2f} ms")
 
-        print(f"   Avg Prefill Speed:    {avg_prefill_speed:7.2f} ms / token")
-        print(f"   Avg Decode Speed:    {avg_decode_speed:7.2f} ms / token")
+        print(f"\n🎯 TOKEN STATISTICS:")
+        print(f"   Avg Prefill Speed: {avg_prefill_speed:7.2f} tokens/s")
+        print(f"   Avg Decode Speed:  {avg_decode_speed:7.2f} tokens/s")
 
         print(f"\n⚡ TIME BREAKDOWN:")
         avg_preprocess = np.mean([r['metrics']['preprocessing_ms'] for r in results])
@@ -390,12 +462,20 @@ Respond ONLY with valid JSON (no markdown, no extra text):
         print(f"   Desktop avg:     {avg_time:.2f} ms ({self.device.upper()})")
         print(f"   Speedup factor:  {speedup:.2f}x {'🚀' if speedup > 2 else '⚡' if speedup > 1 else '🐌'}")
 
-        print(f"\n📝 SAMPLE RESPONSES:")
-        for i, r in enumerate(results[:3]):
-            print(f"   Frame {i}: [{r['hazard_level']:6s}] {r['reason'][:60]}")
+        print(f"\n📝 AI-GENERATED SAFETY REMINDERS (Sample):")
+        sample_count = 0
+        for i, r in enumerate(results):
+            if r['reminder'] and sample_count < 5:
+                print(f"   Frame {i}: [{r['hazard_level']:6s}] {r['reminder']}")
+                sample_count += 1
+            elif sample_count >= 5:
+                break
+
+        if sample_count == 0:
+            print("   [All frames were safe - no reminders generated]")
 
         # Save results
-        output_file = f"gemma3n_benchmark_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        output_file = f"results/{self.device}_gemma3n_benchmark_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
         with open(output_file, 'w') as f:
             json.dump({
                 'model': 'Gemma 3N',
@@ -403,6 +483,8 @@ Respond ONLY with valid JSON (no markdown, no extra text):
                     'avg_time_ms': avg_time,
                     'avg_inference_ms': avg_inference,
                     'avg_fps': avg_fps,
+                    'avg_prefill_speed': avg_prefill_speed,
+                    'avg_decode_speed': avg_decode_speed,
                     'min_time_ms': min_time,
                     'max_time_ms': max_time,
                     'std_dev_ms': std_time,
@@ -418,7 +500,7 @@ Respond ONLY with valid JSON (no markdown, no extra text):
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Hazard Detection - Gemma 3N Native')
+    parser = argparse.ArgumentParser(description='Hazard Detection - Gemma 3N with Safety Reminders')
     parser.add_argument('--video', type=str, required=True, help='Path to video file')
     parser.add_argument('--model', type=str, default='gemma-2b',
                         choices=['gemma-2b', 'gemma-4b'],
@@ -433,28 +515,34 @@ def main():
 
 
 if __name__ == "__main__":
-    VIDEO_PATH = "4271760-hd_1920_1080_30fps.mp4"
-
+    VIDEO_PATH = "videos/4271760-hd_1920_1080_30fps.mp4"
+    parser = argparse.ArgumentParser(description='Hazard Detection - Gemma 3N with Safety Reminders')
+    parser.add_argument('--model', type=str, default='gemma-3n-2b',
+                        choices=['gemma-3n-2b', 'gemma-3n-4b'],
+                        help='Model size')
+    args = parser.parse_args()
     if VIDEO_PATH == "path/to/your/video.mp4":
         print("=" * 80)
-        print("🚀 Gemma 3N Hazard Detection (Native Multimodal)")
+        print("🚀 Gemma 3N Hazard Detection with AI Safety Reminders")
         print("=" * 80)
         print("\n📦 INSTALLATION:")
         print("   pip install --upgrade transformers torch accelerate opencv-python pillow numpy")
         print("   (Requires transformers >= 4.40)")
         print("\n📖 USAGE:")
         print("\n1️⃣  Gemma 2B (faster, 4GB VRAM):")
-        print("    python script.py --video video.mp4 --model gemma-2b --device cuda --frames 30")
+        print("    python main2.py --video video.mp4 --model gemma-2b --device cuda --frames 30")
         print("\n2️⃣  Gemma 4B (better accuracy, 8GB VRAM):")
-        print("    python script.py --video video.mp4 --model gemma-4b --device cuda --frames 30")
-        print("\n3️⃣  CPU mode (very slow):")
-        print("    python script.py --video video.mp4 --model gemma-2b --device cpu --frames 5")
-        print("\n💡 WHAT'S DIFFERENT:")
-        print("   ✅ Uses Gemma3nForConditionalGeneration (native vision support)")
-        print("   ✅ Chat-based message format (system + user roles)")
-        print("   ✅ Direct image processing (no intermediate description)")
-        print("   ✅ Single-stage pipeline (faster than two-stage)")
+        print("    python main2.py --video video.mp4 --model gemma-4b --device cuda --frames 30")
+        print("\n💡 OUTPUT FORMAT:")
+        print("   🟢 Green:  No reminder (safe)")
+        print("   🟡 Yellow: AI-generated caution reminder")
+        print("   🔴 Red:    AI-generated urgent safety instruction")
+        print("\n📋 EXAMPLE AI REMINDERS:")
+        print("   • Watch for wet floor, walk carefully")
+        print("   • Use caution in low visibility areas")
+        print("   • Evacuate immediately, fire detected")
+        print("   • Keep safe distance from moving vehicle")
         print("=" * 80)
     else:
-        system = HazardDetectionSystem(model_name="gemma-2b", device="cuda")
+        system = HazardDetectionSystem(model_name=args.model, device="cuda")
         results = system.benchmark_realtime_performance(VIDEO_PATH, num_frames=10)

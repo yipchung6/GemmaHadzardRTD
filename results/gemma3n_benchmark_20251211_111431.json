@@ -1,0 +1,220 @@
+{
+  "model": "Gemma 3N",
+  "summary": {
+    "avg_time_ms": 5865.407000000001,
+    "avg_inference_ms": 5859.806,
+    "avg_fps": 0.17099999999999999,
+    "avg_prefill_speed": 45.454,
+    "avg_decode_speed": 4.483,
+    "min_time_ms": 5540.77,
+    "max_time_ms": 6285.87,
+    "std_dev_ms": 216.5822589248713,
+    "median_time_ms": 5860.91,
+    "realtime_30fps_capable": false,
+    "realtime_15fps_capable": false,
+    "speedup_vs_mobile": 0.03409823052347433,
+    "device": "cpu"
+  },
+  "results": [
+    {
+      "hazard_level": "yellow",
+      "reminder": "Ensure proper footing, avoid slippery surfaces.",
+      "metrics": {
+        "total_time_ms": 6285.87,
+        "preprocessing_ms": 6.44,
+        "inference_ms": 6274.38,
+        "parsing_ms": 0.02,
+        "input_tokens": 266,
+        "output_tokens": 27,
+        "prefill_speed": 42.39,
+        "decode_speed": 4.3,
+        "fps": 0.16,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Ensure proper footing, avoid slippery surfaces.\"}\n```",
+      "frame_number": 0
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Ensure proper footing on wet concrete.",
+      "metrics": {
+        "total_time_ms": 5788.44,
+        "preprocessing_ms": 4.28,
+        "inference_ms": 5783.54,
+        "parsing_ms": 0.02,
+        "input_tokens": 266,
+        "output_tokens": 26,
+        "prefill_speed": 45.99,
+        "decode_speed": 4.5,
+        "fps": 0.17,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Ensure proper footing on wet concrete.\"}\n```",
+      "frame_number": 1
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Ensure proper footing, avoid slippery surfaces.",
+      "metrics": {
+        "total_time_ms": 5873.54,
+        "preprocessing_ms": 3.94,
+        "inference_ms": 5868.8,
+        "parsing_ms": 0.02,
+        "input_tokens": 266,
+        "output_tokens": 27,
+        "prefill_speed": 45.32,
+        "decode_speed": 4.6,
+        "fps": 0.17,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Ensure proper footing, avoid slippery surfaces.\"}\n```",
+      "frame_number": 2
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Ensure workers use proper PPE, especially around concrete.",
+      "metrics": {
+        "total_time_ms": 6018.87,
+        "preprocessing_ms": 4.1,
+        "inference_ms": 6014.39,
+        "parsing_ms": 0.02,
+        "input_tokens": 266,
+        "output_tokens": 29,
+        "prefill_speed": 44.23,
+        "decode_speed": 4.82,
+        "fps": 0.17,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Ensure workers use proper PPE, especially around concrete.\"}\n```",
+      "frame_number": 3
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Concrete work: Wear proper PPE & follow procedures.",
+      "metrics": {
+        "total_time_ms": 6018.42,
+        "preprocessing_ms": 5.04,
+        "inference_ms": 6012.94,
+        "parsing_ms": 0.01,
+        "input_tokens": 266,
+        "output_tokens": 29,
+        "prefill_speed": 44.24,
+        "decode_speed": 4.82,
+        "fps": 0.17,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Concrete work: Wear proper PPE & follow procedures.\"}\n```",
+      "frame_number": 4
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Ensure proper footing, avoid slips/trips",
+      "metrics": {
+        "total_time_ms": 6000.81,
+        "preprocessing_ms": 4.49,
+        "inference_ms": 5995.79,
+        "parsing_ms": 0.01,
+        "input_tokens": 266,
+        "output_tokens": 28,
+        "prefill_speed": 44.36,
+        "decode_speed": 4.67,
+        "fps": 0.17,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Ensure proper footing, avoid slips/trips\"}\n```",
+      "frame_number": 5
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Maintain safe distance from concrete pump.",
+      "metrics": {
+        "total_time_ms": 5721.03,
+        "preprocessing_ms": 4.26,
+        "inference_ms": 5716.09,
+        "parsing_ms": 0.01,
+        "input_tokens": 266,
+        "output_tokens": 26,
+        "prefill_speed": 46.54,
+        "decode_speed": 4.55,
+        "fps": 0.17,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Maintain safe distance from concrete pump.\"}\n```",
+      "frame_number": 6
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Wear appropriate PPE, concrete can be hazardous.",
+      "metrics": {
+        "total_time_ms": 5558.04,
+        "preprocessing_ms": 4.83,
+        "inference_ms": 5552.74,
+        "parsing_ms": 0.02,
+        "input_tokens": 266,
+        "output_tokens": 23,
+        "prefill_speed": 47.9,
+        "decode_speed": 4.14,
+        "fps": 0.18,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "{\"hazard_level\": \"yellow\", \"reminder\": \"Wear appropriate PPE, concrete can be hazardous.\"}",
+      "frame_number": 7
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Wear proper PPE, stay aware",
+      "metrics": {
+        "total_time_ms": 5848.28,
+        "preprocessing_ms": 4.57,
+        "inference_ms": 5843.14,
+        "parsing_ms": 0.02,
+        "input_tokens": 266,
+        "output_tokens": 25,
+        "prefill_speed": 45.52,
+        "decode_speed": 4.28,
+        "fps": 0.17,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Wear proper PPE, stay aware\"}\n```",
+      "frame_number": 8
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Concrete truck: Stay clear of the chute.",
+      "metrics": {
+        "total_time_ms": 5540.77,
+        "preprocessing_ms": 4.12,
+        "inference_ms": 5536.25,
+        "parsing_ms": 0.02,
+        "input_tokens": 266,
+        "output_tokens": 23,
+        "prefill_speed": 48.05,
+        "decode_speed": 4.15,
+        "fps": 0.18,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "{\"hazard_level\": \"yellow\", \"reminder\": \"Concrete truck: Stay clear of the chute.\"}",
+      "frame_number": 9
+    }
+  ]
+}

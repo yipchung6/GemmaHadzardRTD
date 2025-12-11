@@ -473,7 +473,7 @@ class HazardDetectionSystem:
             print("   [All frames were safe - no reminders generated]")
 
         # Save results
-        output_file = f"paligemma2_benchmark_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        output_file = f"results/{self.device}_paligemma2_benchmark_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
         with open(output_file, 'w') as f:
             json.dump({
                 'model': 'PaliGemma 2',
@@ -517,7 +517,7 @@ def main():
 
 
 if __name__ == "__main__":
-    VIDEO_PATH = "gettyimages-1455769365-640_adpp.mp4"
+    VIDEO_PATH = "videos/gettyimages-1455769365-640_adpp.mp4"
 
     if VIDEO_PATH == "path/to/your/video.mp4":
         print("=" * 80)
