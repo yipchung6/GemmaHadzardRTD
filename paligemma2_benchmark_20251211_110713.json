@@ -1,0 +1,223 @@
+{
+  "model": "PaliGemma 2",
+  "model_name": "paligemma2-3b-448",
+  "summary": {
+    "avg_time_ms": 3079.7870000000003,
+    "avg_inference_ms": 3077.322,
+    "avg_prefill_speed": 17.988999999999997,
+    "avg_decode_speed": 1.9129999999999998,
+    "avg_input_tokens": 54.0,
+    "avg_output_tokens": 6.6,
+    "avg_fps": 0.33199999999999996,
+    "min_time_ms": 2667.71,
+    "max_time_ms": 4659.83,
+    "std_dev_ms": 562.3308046701692,
+    "median_time_ms": 2881.7200000000003,
+    "realtime_30fps_capable": false,
+    "realtime_15fps_capable": false,
+    "speedup_vs_mobile": 0.06493955588487126,
+    "device": "cpu"
+  },
+  "results": [
+    {
+      "hazard_level": "green",
+      "reminder": "",
+      "metrics": {
+        "total_time_ms": 3142.91,
+        "preprocessing_ms": 2.74,
+        "inference_ms": 3139.7,
+        "parsing_ms": 0.0,
+        "input_tokens": 54,
+        "output_tokens": 6,
+        "prefill_speed": 17.2,
+        "decode_speed": 1.91,
+        "fps": 0.32,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "image of a construction worker",
+      "frame_number": 0
+    },
+    {
+      "hazard_level": "green",
+      "reminder": "",
+      "metrics": {
+        "total_time_ms": 3009.28,
+        "preprocessing_ms": 1.95,
+        "inference_ms": 3007.14,
+        "parsing_ms": 0.01,
+        "input_tokens": 54,
+        "output_tokens": 6,
+        "prefill_speed": 17.96,
+        "decode_speed": 2.0,
+        "fps": 0.33,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "image of a construction worker",
+      "frame_number": 1
+    },
+    {
+      "hazard_level": "green",
+      "reminder": "",
+      "metrics": {
+        "total_time_ms": 4659.83,
+        "preprocessing_ms": 2.15,
+        "inference_ms": 4657.49,
+        "parsing_ms": 0.01,
+        "input_tokens": 54,
+        "output_tokens": 25,
+        "prefill_speed": 11.59,
+        "decode_speed": 5.37,
+        "fps": 0.21,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "screen shot 2021 05 05 at 10.35 55 am",
+      "frame_number": 2
+    },
+    {
+      "hazard_level": "green",
+      "reminder": "",
+      "metrics": {
+        "total_time_ms": 2696.12,
+        "preprocessing_ms": 2.62,
+        "inference_ms": 2693.32,
+        "parsing_ms": 0.01,
+        "input_tokens": 54,
+        "output_tokens": 3,
+        "prefill_speed": 20.05,
+        "decode_speed": 1.11,
+        "fps": 0.37,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "video preview",
+      "frame_number": 3
+    },
+    {
+      "hazard_level": "green",
+      "reminder": "",
+      "metrics": {
+        "total_time_ms": 2791.31,
+        "preprocessing_ms": 2.52,
+        "inference_ms": 2788.61,
+        "parsing_ms": 0.01,
+        "input_tokens": 54,
+        "output_tokens": 3,
+        "prefill_speed": 19.36,
+        "decode_speed": 1.08,
+        "fps": 0.36,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "video preview",
+      "frame_number": 4
+    },
+    {
+      "hazard_level": "green",
+      "reminder": "",
+      "metrics": {
+        "total_time_ms": 2792.86,
+        "preprocessing_ms": 2.02,
+        "inference_ms": 2790.65,
+        "parsing_ms": 0.01,
+        "input_tokens": 54,
+        "output_tokens": 3,
+        "prefill_speed": 19.35,
+        "decode_speed": 1.08,
+        "fps": 0.36,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "video preview",
+      "frame_number": 5
+    },
+    {
+      "hazard_level": "green",
+      "reminder": "",
+      "metrics": {
+        "total_time_ms": 3314.64,
+        "preprocessing_ms": 1.87,
+        "inference_ms": 3312.59,
+        "parsing_ms": 0.01,
+        "input_tokens": 54,
+        "output_tokens": 9,
+        "prefill_speed": 16.3,
+        "decode_speed": 2.72,
+        "fps": 0.3,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "53rd & 5th Avenue",
+      "frame_number": 6
+    },
+    {
+      "hazard_level": "green",
+      "reminder": "",
+      "metrics": {
+        "total_time_ms": 2752.63,
+        "preprocessing_ms": 2.02,
+        "inference_ms": 2750.43,
+        "parsing_ms": 0.01,
+        "input_tokens": 54,
+        "output_tokens": 3,
+        "prefill_speed": 19.63,
+        "decode_speed": 1.09,
+        "fps": 0.36,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "video preview",
+      "frame_number": 7
+    },
+    {
+      "hazard_level": "green",
+      "reminder": "",
+      "metrics": {
+        "total_time_ms": 2970.58,
+        "preprocessing_ms": 2.12,
+        "inference_ms": 2968.27,
+        "parsing_ms": 0.01,
+        "input_tokens": 54,
+        "output_tokens": 6,
+        "prefill_speed": 18.19,
+        "decode_speed": 2.02,
+        "fps": 0.34,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "image of a construction worker",
+      "frame_number": 8
+    },
+    {
+      "hazard_level": "green",
+      "reminder": "",
+      "metrics": {
+        "total_time_ms": 2667.71,
+        "preprocessing_ms": 2.5,
+        "inference_ms": 2665.02,
+        "parsing_ms": 0.01,
+        "input_tokens": 54,
+        "output_tokens": 2,
+        "prefill_speed": 20.26,
+        "decode_speed": 0.75,
+        "fps": 0.37,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "video",
+      "frame_number": 9
+    }
+  ]
+}

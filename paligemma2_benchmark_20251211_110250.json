@@ -1,0 +1,223 @@
+{
+  "model": "PaliGemma 2",
+  "model_name": "paligemma2-3b-448",
+  "summary": {
+    "avg_time_ms": 3043.944,
+    "avg_inference_ms": 3039.0209999999997,
+    "avg_prefill_speed": 17.797,
+    "avg_decode_speed": 2.143,
+    "avg_input_tokens": 54.0,
+    "avg_output_tokens": 6.5,
+    "avg_fps": 0.328,
+    "min_time_ms": 2935.65,
+    "max_time_ms": 3408.22,
+    "std_dev_ms": 126.5147841321321,
+    "median_time_ms": 3016.7749999999996,
+    "realtime_30fps_capable": false,
+    "realtime_15fps_capable": false,
+    "speedup_vs_mobile": 0.06570423108966525,
+    "device": "cpu"
+  },
+  "results": [
+    {
+      "hazard_level": "green",
+      "reminder": "",
+      "metrics": {
+        "total_time_ms": 3408.22,
+        "preprocessing_ms": 5.63,
+        "inference_ms": 3402.08,
+        "parsing_ms": 0.01,
+        "input_tokens": 54,
+        "output_tokens": 6,
+        "prefill_speed": 15.87,
+        "decode_speed": 1.76,
+        "fps": 0.29,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "image of workers pouring concrete",
+      "frame_number": 0
+    },
+    {
+      "hazard_level": "green",
+      "reminder": "",
+      "metrics": {
+        "total_time_ms": 3021.32,
+        "preprocessing_ms": 5.16,
+        "inference_ms": 3015.94,
+        "parsing_ms": 0.01,
+        "input_tokens": 54,
+        "output_tokens": 7,
+        "prefill_speed": 17.9,
+        "decode_speed": 2.32,
+        "fps": 0.33,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "workers pouring concrete into a street",
+      "frame_number": 1
+    },
+    {
+      "hazard_level": "green",
+      "reminder": "",
+      "metrics": {
+        "total_time_ms": 3014.97,
+        "preprocessing_ms": 4.52,
+        "inference_ms": 3010.26,
+        "parsing_ms": 0.01,
+        "input_tokens": 54,
+        "output_tokens": 7,
+        "prefill_speed": 17.94,
+        "decode_speed": 2.33,
+        "fps": 0.33,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "workers pouring concrete into a street",
+      "frame_number": 2
+    },
+    {
+      "hazard_level": "green",
+      "reminder": "",
+      "metrics": {
+        "total_time_ms": 3018.58,
+        "preprocessing_ms": 4.4,
+        "inference_ms": 3014.0,
+        "parsing_ms": 0.01,
+        "input_tokens": 54,
+        "output_tokens": 7,
+        "prefill_speed": 17.92,
+        "decode_speed": 2.32,
+        "fps": 0.33,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "workers pouring concrete into a street",
+      "frame_number": 3
+    },
+    {
+      "hazard_level": "green",
+      "reminder": "",
+      "metrics": {
+        "total_time_ms": 2989.47,
+        "preprocessing_ms": 4.88,
+        "inference_ms": 2984.39,
+        "parsing_ms": 0.01,
+        "input_tokens": 54,
+        "output_tokens": 6,
+        "prefill_speed": 18.09,
+        "decode_speed": 2.01,
+        "fps": 0.33,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "image of workers pouring concrete",
+      "frame_number": 4
+    },
+    {
+      "hazard_level": "green",
+      "reminder": "",
+      "metrics": {
+        "total_time_ms": 2955.47,
+        "preprocessing_ms": 4.13,
+        "inference_ms": 2951.15,
+        "parsing_ms": 0.01,
+        "input_tokens": 54,
+        "output_tokens": 6,
+        "prefill_speed": 18.3,
+        "decode_speed": 2.03,
+        "fps": 0.34,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "image of workers pouring concrete",
+      "frame_number": 5
+    },
+    {
+      "hazard_level": "green",
+      "reminder": "",
+      "metrics": {
+        "total_time_ms": 2935.65,
+        "preprocessing_ms": 4.69,
+        "inference_ms": 2930.78,
+        "parsing_ms": 0.01,
+        "input_tokens": 54,
+        "output_tokens": 6,
+        "prefill_speed": 18.43,
+        "decode_speed": 2.05,
+        "fps": 0.34,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "image of workers pouring concrete",
+      "frame_number": 6
+    },
+    {
+      "hazard_level": "green",
+      "reminder": "",
+      "metrics": {
+        "total_time_ms": 2994.67,
+        "preprocessing_ms": 4.72,
+        "inference_ms": 2989.75,
+        "parsing_ms": 0.01,
+        "input_tokens": 54,
+        "output_tokens": 6,
+        "prefill_speed": 18.06,
+        "decode_speed": 2.01,
+        "fps": 0.33,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "image of workers pouring concrete",
+      "frame_number": 7
+    },
+    {
+      "hazard_level": "green",
+      "reminder": "",
+      "metrics": {
+        "total_time_ms": 3063.4,
+        "preprocessing_ms": 4.82,
+        "inference_ms": 3058.4,
+        "parsing_ms": 0.01,
+        "input_tokens": 54,
+        "output_tokens": 7,
+        "prefill_speed": 17.66,
+        "decode_speed": 2.29,
+        "fps": 0.33,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "workers pouring concrete into a street",
+      "frame_number": 8
+    },
+    {
+      "hazard_level": "green",
+      "reminder": "",
+      "metrics": {
+        "total_time_ms": 3037.69,
+        "preprocessing_ms": 4.05,
+        "inference_ms": 3033.46,
+        "parsing_ms": 0.01,
+        "input_tokens": 54,
+        "output_tokens": 7,
+        "prefill_speed": 17.8,
+        "decode_speed": 2.31,
+        "fps": 0.33,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "workers pouring concrete into a street",
+      "frame_number": 9
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "model": "Gemma 3N",
+  "summary": {
+    "avg_time_ms": 7223.067999999999,
+    "avg_inference_ms": 7217.772999999999,
+    "avg_fps": 0.139,
+    "min_time_ms": 6667.04,
+    "max_time_ms": 7733.64,
+    "std_dev_ms": 380.8763814362871,
+    "median_time_ms": 7298.43,
+    "realtime_30fps_capable": false,
+    "realtime_15fps_capable": false,
+    "speedup_vs_mobile": 0.027689065089792873,
+    "device": "cpu"
+  },
+  "results": [
+    {
+      "hazard_level": "red",
+      "reason": "Workers are operating heavy machinery (concrete pump) in a confined area with exposed rebar and wet concrete. Lack of clear safety protocols and potential for serious injury are present.",
+      "metrics": {
+        "total_time_ms": 7444.37,
+        "preprocessing_ms": 5.67,
+        "inference_ms": 7433.98,
+        "parsing_ms": 0.01,
+        "input_tokens": 170,
+        "output_tokens": 53,
+        "prefill_speed": 22.87,
+        "decode_speed": 7.13,
+        "fps": 0.13,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"red\", \"reason\": \"Workers are operating heavy machinery (concrete pump) in a confined area with exposed rebar and wet concrete. Lack of clear safety protocols and potential for serious injury are present.\"}\n```",
+      "frame_number": 0
+    },
+    {
+      "hazard_level": "red",
+      "reason": "Workers are operating heavy machinery (concrete pump) in a confined space with wet concrete. Lack of clear barriers and potential for falling debris pose significant risks.",
+      "metrics": {
+        "total_time_ms": 6806.4,
+        "preprocessing_ms": 4.26,
+        "inference_ms": 6801.83,
+        "parsing_ms": 0.01,
+        "input_tokens": 170,
+        "output_tokens": 49,
+        "prefill_speed": 24.99,
+        "decode_speed": 7.2,
+        "fps": 0.15,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"red\", \"reason\": \"Workers are operating heavy machinery (concrete pump) in a confined space with wet concrete. Lack of clear barriers and potential for falling debris pose significant risks.\"}\n```",
+      "frame_number": 1
+    },
+    {
+      "hazard_level": "red",
+      "reason": "Workers are actively pouring concrete into a hole in the street without clear safety protocols. There's a risk of falling debris, potential for splashing concrete, and limited visibility due to the construction activity.",
+      "metrics": {
+        "total_time_ms": 7728.61,
+        "preprocessing_ms": 4.46,
+        "inference_ms": 7723.84,
+        "parsing_ms": 0.01,
+        "input_tokens": 170,
+        "output_tokens": 58,
+        "prefill_speed": 22.01,
+        "decode_speed": 7.51,
+        "fps": 0.13,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"red\", \"reason\": \"Workers are actively pouring concrete into a hole in the street without clear safety protocols. There's a risk of falling debris, potential for splashing concrete, and limited visibility due to the construction activity.\"}\n```",
+      "frame_number": 2
+    },
+    {
+      "hazard_level": "red",
+      "reason": "Workers are actively pouring concrete into a trench without proper shoring or protective measures. This poses a significant risk of cave-in and serious injury.",
+      "metrics": {
+        "total_time_ms": 6795.51,
+        "preprocessing_ms": 4.48,
+        "inference_ms": 6790.68,
+        "parsing_ms": 0.01,
+        "input_tokens": 170,
+        "output_tokens": 48,
+        "prefill_speed": 25.03,
+        "decode_speed": 7.07,
+        "fps": 0.15,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"red\", \"reason\": \"Workers are actively pouring concrete into a trench without proper shoring or protective measures. This poses a significant risk of cave-in and serious injury.\"}\n```",
+      "frame_number": 3
+    },
+    {
+      "hazard_level": "red",
+      "reason": "Workers are actively pouring concrete into a hole with heavy machinery. There's a risk of being struck by falling debris, concrete splatter, and potential for the machinery to malfunction, posing immediate danger to the workers.",
+      "metrics": {
+        "total_time_ms": 7733.64,
+        "preprocessing_ms": 4.7,
+        "inference_ms": 7728.63,
+        "parsing_ms": 0.01,
+        "input_tokens": 170,
+        "output_tokens": 61,
+        "prefill_speed": 22.0,
+        "decode_speed": 7.89,
+        "fps": 0.13,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"red\", \"reason\": \"Workers are actively pouring concrete into a hole with heavy machinery. There's a risk of being struck by falling debris, concrete splatter, and potential for the machinery to malfunction, posing immediate danger to the workers.\"}\n```",
+      "frame_number": 4
+    },
+    {
+      "hazard_level": "red",
+      "reason": "Workers are operating heavy machinery (concrete pump) in a confined space with wet concrete, posing a risk of being struck by the pump or falling into the hole. Proper PPE is not consistently worn.",
+      "metrics": {
+        "total_time_ms": 7538.84,
+        "preprocessing_ms": 4.38,
+        "inference_ms": 7534.15,
+        "parsing_ms": 0.01,
+        "input_tokens": 170,
+        "output_tokens": 58,
+        "prefill_speed": 22.56,
+        "decode_speed": 7.7,
+        "fps": 0.13,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"red\", \"reason\": \"Workers are operating heavy machinery (concrete pump) in a confined space with wet concrete, posing a risk of being struck by the pump or falling into the hole. Proper PPE is not consistently worn.\"}\n```",
+      "frame_number": 5
+    },
+    {
+      "hazard_level": "red",
+      "reason": "Workers are actively pouring concrete into a hole without adequate safety measures. There is a risk of being splashed with concrete, potential for falling debris, and the hose could pose a tripping hazard.",
+      "metrics": {
+        "total_time_ms": 7389.46,
+        "preprocessing_ms": 4.55,
+        "inference_ms": 7384.57,
+        "parsing_ms": 0.01,
+        "input_tokens": 170,
+        "output_tokens": 56,
+        "prefill_speed": 23.02,
+        "decode_speed": 7.58,
+        "fps": 0.14,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"red\", \"reason\": \"Workers are actively pouring concrete into a hole without adequate safety measures. There is a risk of being splashed with concrete, potential for falling debris, and the hose could pose a tripping hazard.\"}\n```",
+      "frame_number": 6
+    },
+    {
+      "hazard_level": "red",
+      "reason": "Workers are pouring concrete into an uncovered hole, posing a risk of being splashed with wet concrete. Lack of proper barriers and distance from the pouring equipment creates an immediate danger.",
+      "metrics": {
+        "total_time_ms": 7207.4,
+        "preprocessing_ms": 3.96,
+        "inference_ms": 7203.13,
+        "parsing_ms": 0.02,
+        "input_tokens": 170,
+        "output_tokens": 53,
+        "prefill_speed": 23.6,
+        "decode_speed": 7.36,
+        "fps": 0.14,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"red\", \"reason\": \"Workers are pouring concrete into an uncovered hole, posing a risk of being splashed with wet concrete. Lack of proper barriers and distance from the pouring equipment creates an immediate danger.\"}\n```",
+      "frame_number": 7
+    },
+    {
+      "hazard_level": "red",
+      "reason": "Workers are pouring concrete into an uncovered hole, posing a risk of being splashed with wet concrete. There is also a potential for falling debris from the machinery.",
+      "metrics": {
+        "total_time_ms": 6919.41,
+        "preprocessing_ms": 4.48,
+        "inference_ms": 6914.61,
+        "parsing_ms": 0.01,
+        "input_tokens": 170,
+        "output_tokens": 50,
+        "prefill_speed": 24.59,
+        "decode_speed": 7.23,
+        "fps": 0.14,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"red\", \"reason\": \"Workers are pouring concrete into an uncovered hole, posing a risk of being splashed with wet concrete. There is also a potential for falling debris from the machinery.\"}\n```",
+      "frame_number": 8
+    },
+    {
+      "hazard_level": "red",
+      "reason": "Workers are pouring concrete into a trench without adequate shoring or support. This poses a significant risk of cave-in and serious injury.",
+      "metrics": {
+        "total_time_ms": 6667.04,
+        "preprocessing_ms": 4.42,
+        "inference_ms": 6662.31,
+        "parsing_ms": 0.01,
+        "input_tokens": 170,
+        "output_tokens": 46,
+        "prefill_speed": 25.52,
+        "decode_speed": 6.9,
+        "fps": 0.15,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"red\", \"reason\": \"Workers are pouring concrete into a trench without adequate shoring or support. This poses a significant risk of cave-in and serious injury.\"}\n```",
+      "frame_number": 9
+    }
+  ]
+}
