@@ -1,0 +1,223 @@
+{
+  "model": "Gemma 3 (Multimodal)",
+  "model_name": "gemma-3-4b",
+  "summary": {
+    "avg_time_ms": 7318.375999999999,
+    "avg_inference_ms": 7308.677000000001,
+    "avg_fps": 0.13799999999999998,
+    "avg_prefill_speed": 27.232,
+    "avg_decode_speed": 3.5159999999999996,
+    "avg_input_tokens": 199.0,
+    "avg_output_tokens": 25.7,
+    "min_time_ms": 7180.67,
+    "max_time_ms": 7418.5,
+    "std_dev_ms": 79.2092138832346,
+    "median_time_ms": 7324.725,
+    "realtime_30fps_capable": false,
+    "realtime_15fps_capable": false,
+    "speedup_vs_mobile": 0.02732846740861634,
+    "device": "cpu"
+  },
+  "results": [
+    {
+      "hazard_level": "yellow",
+      "reminder": "Concrete splash hazard! Wear PPE.",
+      "metrics": {
+        "total_time_ms": 7418.5,
+        "preprocessing_ms": 10.07,
+        "inference_ms": 7403.66,
+        "parsing_ms": 0.01,
+        "input_tokens": 199,
+        "output_tokens": 26,
+        "prefill_speed": 26.88,
+        "decode_speed": 3.51,
+        "fps": 0.13,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Concrete splash hazard! Wear PPE.\"}\n```",
+      "frame_number": 0
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Keep clear of concrete!",
+      "metrics": {
+        "total_time_ms": 7180.67,
+        "preprocessing_ms": 8.85,
+        "inference_ms": 7171.44,
+        "parsing_ms": 0.01,
+        "input_tokens": 199,
+        "output_tokens": 24,
+        "prefill_speed": 27.75,
+        "decode_speed": 3.35,
+        "fps": 0.14,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Keep clear of concrete!\"}\n```",
+      "frame_number": 1
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Concrete cooling, slip risk!",
+      "metrics": {
+        "total_time_ms": 7243.59,
+        "preprocessing_ms": 8.55,
+        "inference_ms": 7234.68,
+        "parsing_ms": 0.01,
+        "input_tokens": 199,
+        "output_tokens": 25,
+        "prefill_speed": 27.51,
+        "decode_speed": 3.46,
+        "fps": 0.14,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Concrete cooling, slip risk!\"}\n```",
+      "frame_number": 2
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Concrete splash risk. Wear PPE!",
+      "metrics": {
+        "total_time_ms": 7385.71,
+        "preprocessing_ms": 8.69,
+        "inference_ms": 7376.66,
+        "parsing_ms": 0.01,
+        "input_tokens": 199,
+        "output_tokens": 26,
+        "prefill_speed": 26.98,
+        "decode_speed": 3.52,
+        "fps": 0.14,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Concrete splash risk. Wear PPE!\"}\n```",
+      "frame_number": 3
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Ensure proper footing; concrete is slick",
+      "metrics": {
+        "total_time_ms": 7360.76,
+        "preprocessing_ms": 8.44,
+        "inference_ms": 7351.94,
+        "parsing_ms": 0.01,
+        "input_tokens": 199,
+        "output_tokens": 26,
+        "prefill_speed": 27.07,
+        "decode_speed": 3.54,
+        "fps": 0.14,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Ensure proper footing; concrete is slick\"}\n```",
+      "frame_number": 4
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Concrete slump risk. Watch footing!",
+      "metrics": {
+        "total_time_ms": 7288.69,
+        "preprocessing_ms": 8.28,
+        "inference_ms": 7280.07,
+        "parsing_ms": 0.01,
+        "input_tokens": 199,
+        "output_tokens": 26,
+        "prefill_speed": 27.33,
+        "decode_speed": 3.57,
+        "fps": 0.14,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Concrete slump risk. Watch footing!\"}\n```",
+      "frame_number": 5
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Concrete splash risk. Wear PPE!",
+      "metrics": {
+        "total_time_ms": 7258.91,
+        "preprocessing_ms": 9.2,
+        "inference_ms": 7249.35,
+        "parsing_ms": 0.01,
+        "input_tokens": 199,
+        "output_tokens": 26,
+        "prefill_speed": 27.45,
+        "decode_speed": 3.59,
+        "fps": 0.14,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Concrete splash risk. Wear PPE!\"}\n```",
+      "frame_number": 6
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Concrete splash risk. Wear PPE.",
+      "metrics": {
+        "total_time_ms": 7250.92,
+        "preprocessing_ms": 8.91,
+        "inference_ms": 7241.69,
+        "parsing_ms": 0.01,
+        "input_tokens": 199,
+        "output_tokens": 26,
+        "prefill_speed": 27.48,
+        "decode_speed": 3.59,
+        "fps": 0.14,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Concrete splash risk. Wear PPE.\"}\n```",
+      "frame_number": 7
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Concrete splash risk! Wear PPE.",
+      "metrics": {
+        "total_time_ms": 7388.5,
+        "preprocessing_ms": 8.98,
+        "inference_ms": 7379.18,
+        "parsing_ms": 0.01,
+        "input_tokens": 199,
+        "output_tokens": 26,
+        "prefill_speed": 26.97,
+        "decode_speed": 3.52,
+        "fps": 0.14,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Concrete splash risk! Wear PPE.\"}\n```",
+      "frame_number": 8
+    },
+    {
+      "hazard_level": "yellow",
+      "reminder": "Concrete cooling - watch for uneven surfaces",
+      "metrics": {
+        "total_time_ms": 7407.51,
+        "preprocessing_ms": 9.02,
+        "inference_ms": 7398.1,
+        "parsing_ms": 0.01,
+        "input_tokens": 199,
+        "output_tokens": 26,
+        "prefill_speed": 26.9,
+        "decode_speed": 3.51,
+        "fps": 0.13,
+        "device": "cpu",
+        "realtime_capable_30fps": false,
+        "realtime_capable_15fps": false
+      },
+      "raw_response": "```json\n{\"hazard_level\": \"yellow\", \"reminder\": \"Concrete cooling - watch for uneven surfaces\"}\n```",
+      "frame_number": 9
+    }
+  ]
+}

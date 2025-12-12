@@ -526,7 +526,7 @@ def main():
 
 
 if __name__ == "__main__":
-    VIDEO_PATH = "4271760-hd_1920_1080_30fps.mp4"
+    VIDEO_PATH = "videos/4271760-hd_1920_1080_30fps.mp4"
 
     if VIDEO_PATH == "path/to/your/video.mp4":
         print("=" * 80)
